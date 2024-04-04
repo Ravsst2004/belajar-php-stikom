@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me</title>
-
-  <!-- CDN Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
-  <?php include "./src/layouts/navbar.php"; ?>
+<?php require_once "./src/layouts/header.php" ?>
 
 
 
-  <!-- <form class="max-w-lg mx-auto mt-10" action="customer_add.php" method="POST">
+<!-- <form class="max-w-lg mx-auto mt-10" action="customer_add.php" method="POST">
     <div class="mb-5">
       <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
       <input type="name" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="name@flowbite.com" required />
@@ -43,6 +30,4 @@
 
 
 
-</body>
-
-</html>
+<?php require_once "./src/layouts/footer.php" ?>

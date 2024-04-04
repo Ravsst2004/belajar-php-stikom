@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>💻Home💻</title>
 
-  <!-- CDN Tailwind -->
+  <link rel="stylesheet" href="src/css/output.css">
+  <!-- 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom Tailwind CSS -->
   <script>
     tailwind.config = {
       theme: {
@@ -20,7 +20,7 @@
         }
       }
     }
-  </script>
+  </script> -->
 
 </head>
 
