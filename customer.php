@@ -1,19 +1,23 @@
 <?php
 require_once(__DIR__ . '/functions/functions_customers.php');
 
+// Cek jika tombol submit ditekan
 if (isset($_POST['submit'])) {
   $succes = customer_add($_POST);
 }
+// Menampilkan ke halaman
+$customers = customer_show('SELECT * FROM customers');
 ?>
 
+
+
+
 <?php require_once "./src/layouts/header.php" ?>
-
-
-
+<!-- Form -->
 <form class="max-w-lg mx-auto mt-10" action="" method="POST">
   <div class="mb-5">
     <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
-    <input type="name" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="name@flowbite.com" required />
+    <input type="name" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Jro Gobler" required />
   </div>
   <div class="mb-5">
     <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Your Phone</label>
@@ -21,7 +25,7 @@ if (isset($_POST['submit'])) {
   </div>
   <div class="mb-5">
     <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-    <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="name@flowbite.com" required />
+    <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="name@gmail.com" required />
   </div>
   <div class="mb-5">
     <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Your address</label>
@@ -37,10 +41,14 @@ if (isset($_POST['submit'])) {
 </form>
 
 
+<!-- Table Customers -->
 <div class="relative w-max-lg overflow-x-auto mt-20">
-  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+  <table class="w-full text-sm text-left rtl:text-right text-black">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-200">
       <tr>
+        <th scope="col" class="px-6 py-3">
+          No
+        </th>
         <th scope="col" class="px-6 py-3">
           Name
         </th>
@@ -53,29 +61,45 @@ if (isset($_POST['submit'])) {
         <th scope="col" class="px-6 py-3">
           Address
         </th>
+        <th scope="col" class="px-6 py-3">
+          Actions
+        </th>
       </tr>
     </thead>
     <tbody>
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          Apple MacBook Pro 17"
-        </th>
-        <td class="px-6 py-4">
-          Silver
-        </td>
-        <td class="px-6 py-4">
-          Laptop
-        </td>
-        <td class="px-6 py-4">
-          $2999
-        </td>
-      </tr>
+      <?php $nomor = 1 ?>
+      <?php foreach ($customers as $customer) : ?>
+        <tr class="bg-gray-100 border-b ">
+          <td scope="row" class="px-6 py-4">
+            <?= $nomor++ ?>
+          </td>
+          <td scope="row" class="px-6 py-4">
+            <?= $customer['name'] ?>
+          </td>
+          <td class="px-6 py-4">
+            <?= $customer['phone'] ?>
+          </td>
+          <td class="px-6 py-4">
+            <?= $customer['email'] ?>
+          </td>
+          <td class="px-6 py-4">
+            <?= $customer['address'] ?>
+          </td>
+          <td class="px-6 py-4">
+            <!-- Tombol Edit -->
+            <button class="bg-blue-500 hover:bg-blue-700 text-white text-gray font-bold py-2 px-4 rounded-full mr-2">
+              Edit
+            </button>
+            <!-- Tombol Delete -->
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+              Delete
+            </button>
+          </td>
+        </tr>
+      <?php endforeach ?>
     </tbody>
   </table>
 </div>
-
-
-
 
 
 <?php require_once "./src/layouts/footer.php" ?>
