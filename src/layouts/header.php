@@ -21,6 +21,7 @@ function getTitle()
   <title><?= getTitle() ?></title>
 
   <link rel="stylesheet" href="src/css/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="font-poppins">
