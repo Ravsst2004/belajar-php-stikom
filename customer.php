@@ -108,11 +108,9 @@ $customers = customer_show('SELECT * FROM customers');
           </td>
           <td class="px-6 py-4">
             <!-- Tombol Edit -->
-            <button class="bg-blue-500 hover:bg-blue-700 text-white text-gray font-bold py-2 px-4 rounded-full mr-2">
-              <a href="">Edit</a>
-            </button>
+            <a href="customer_edit.php?customer_id=<?= $customer['customer_id'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white text-gray font-bold py-2 px-4 rounded-full mr-2">Edit</a>
             <!-- Tombol Delete -->
-            <a href="functions/functions_customers.php?customer_id=<?= $customer['customer_id'] ?>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Delete</a>
+            <a href="customer_delete.php?customer_id=<?= $customer['customer_id'] ?>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Delete</a>
           </td>
         </tr>
       <?php endforeach ?>
