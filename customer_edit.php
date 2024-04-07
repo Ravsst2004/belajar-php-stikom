@@ -1,9 +1,13 @@
 <?php
 include_once __DIR__ . '/functions/functions_customers.php';
-$id = $_GET['customer_id'];
 
+// Cek jika tombol edit ditekan, jika tidak kembalikan ke halaman customer.php
+isset($_GET['customer_id']) ? $id = $_GET['customer_id'] : header('location:customer.php');
+
+// Mengambil data
 $customer = customer_show("SELECT * FROM customers WHERE customer_id = $id")[0];
 
+// Cek jika tombol submit ditekan untuk mengeksekusi query edit
 if (isset($_POST['submit'])) {
   if (customers_edit($_POST)) {
     echo "

@@ -1,11 +1,12 @@
 <?php
 require_once(__DIR__ . '/functions/functions_customers.php');
 
-// Cek jika tombol submit ditekan
+// Cek jika tombol submit ditekan untuk mengeksekusi query tambah data
 if (isset($_POST['submit'])) {
   $succes = customer_add($_POST);
 }
-// Menampilkan ke halaman
+
+// Ambil data
 $customers = customer_show('SELECT * FROM customers');
 
 // Ambil boolean status

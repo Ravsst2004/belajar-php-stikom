@@ -33,6 +33,7 @@ function customer_show($query)
   return $rows;
 }
 
+// EDIT DATA
 function customers_edit($query)
 {
   global $conn;
@@ -48,7 +49,6 @@ function customers_edit($query)
   return $result;
 }
 
-
 // DELETE DATA
 function customers_delete($id)
 {
@@ -57,6 +57,11 @@ function customers_delete($id)
   $result = mysqli_query($conn, $delete);
   return $result;
 }
+
+
+
+
+
 // if (isset($_GET['customer_id'])) {
 //   $id = $_GET['customer_id'];
 //   customers_delete($id);
