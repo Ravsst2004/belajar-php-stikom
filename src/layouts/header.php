@@ -21,7 +21,7 @@ function getTitle()
   <title><?= getTitle() ?></title>
 
   <link rel="stylesheet" href="src/css/output.css">
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

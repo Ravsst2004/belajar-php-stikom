@@ -1,74 +1,34 @@
 <?php require_once "./src/layouts/header.php" ?>
 
-<!-- Perkalian -->
-<div class="mx-[40rem] mt-10">
-  <button class="w-full bg-blue-600 text-white text-xl py-2 hover:bg-blue-700" id="collapsible">Perkalian</button>
 
-  <div class="hidden" id="contentCollapsible">
-    <!-- <div class="flex flex-row w-full text-center">
-        <h1 class="bg-green-200 w-1/2">Ganjil</h1>
-        <h1 class="bg-red-200 w-1/2">Genap</h1>
-      </div> -->
-
-    <div class="grid grid-cols-2 b-2 border-black">
-      <!-- loop pertama -->
-      <?php for ($k = 1; $k <= 4; $k++) : ?>
-        <div class="flex flex-col text-center border-black border-2">
-          <?php for ($j = 1; $j <= 10; $j++) : ?>
-            <?php if ($k % 2 == 0) : ?>
-              <div>
-                <?php if ($j == 1) : ?>
-                  <h1 class="px-10 border-y-2 border-black">Perkalian <?= $k ?></h1>
-                <?php endif ?>
-                <p><?= $j ?> x <?= $k ?> = <?= $j * $k ?></p>
-              </div>
-            <?php endif ?>
-            <!--  -->
-            <?php if ($k % 2 == 1) : ?>
-              <div>
-                <?php if ($j == 1) : ?>
-
-                  <h1 class="px-10 border-y-2 border-black">Perkalian <?= $k ?></h1>
-                <?php endif ?>
-                <p><?= $j ?> x <?= $k ?> = <?= $j * $k ?></p>
-              </div>
-            <?php endif ?>
-          <?php endfor ?>
-        </div>
-      <?php endfor ?>
-      <!-- end loop pertama -->
-    </div>
+<div class="flex items-center justify-between px-28 pt-56">
+  <div class=" flex flex-col gap-y-2">
+    <h1 class="text-6xl font-bold ">Back-end Web <br> Development Lecture</h1>
+    <p class="text-xl text-justify w-[35rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, recusandae nisi! Dignissimos quas eum omnis labore et. Modi harum odio totam quia perferendis?</p>
+    <a href="#result" class="bg-blue-600 text-lg p-2 w-fit rounded-md text-white hover:bg-blue-800 hover:ring-4 hover:outline-none hover:ring-blue-300">Know what i made</a>
+  </div>
+  <div class="">
+    <img src="./public/svg/landing_page.svg" alt="web-development" width="650">
   </div>
 </div>
 
 
 
-<!-- Latihan -->
-<?php
-// $nilai1 = 70;
-// $nilai2 = 70;
-// $nilai3 = 70;
-// $nilai4 = 70;
-// $nilai5 = 70;
-// $rata_rata = ($nilai1 + $nilai2 + $nilai3 + $nilai4 + $nilai5) / 5;
-// if ($rata_rata >= 70) {
-//   echo "Selamat, anda lulus";
-// } else {
-//   echo "Kocak Gaming";
-// }
 
-// $k = 0;
-// while ($k < 5) {
-//   echo $k;
-//   $k++;
-// }
+<?php $resultOf1stSemeter = [] ?>
+<div class="p-28 mt-32" id="result">
+  <h1 class="font-semibold text-2xl ">Results of 1 Semester</h1>
+  <div class="grid grid-cols-3 gap-4">
+    <a href="kabataku.php" class="border border-gray-300 p-4 hover:text-white hover:bg-gradient-to-br from-blue-700 ">
+      <h1>Kabataku</h1>
+      <img src="public/img/Kabataku.png" alt="kabataku" class="border-2 border-black">
+    </a>
+    <?php for ($i = 1; $i <= 8; $i++) : ?>
+      <div class="border border-gray-300 p-4"><?= "Coming Soon!" ?></div>
+    <?php endfor ?>
+  </div>
+</div>
 
-// $k = 0;
-// do {
-//   echo($k);
-//   $k++;
-// } while($k < 0);
-?>
 
 
 <?php require_once "./src/layouts/footer.php" ?>
