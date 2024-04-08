@@ -23,7 +23,11 @@
       <h1>Kabataku</h1>
       <img src="public/img/Kabataku.png" alt="kabataku" class="border-2 border-black">
     </a>
-    <?php for ($i = 1; $i <= 8; $i++) : ?>
+    <a href="customer.php" class="border border-gray-300 p-4 hover:text-white hover:bg-gradient-to-br from-blue-700 ">
+      <h1>Crud PHP</h1>
+      <img src="public/img/Crud.png" alt="crud-php" class="border-2 border-black">
+    </a>
+    <?php for ($i = 1; $i <= 7; $i++) : ?>
       <div class="border border-gray-300 p-4"><?= "Coming Soon!" ?></div>
     <?php endfor ?>
   </div>
