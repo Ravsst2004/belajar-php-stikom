@@ -42,6 +42,7 @@ $customers = customer_show('SELECT * FROM customers');
 
 
 <!-- Form -->
+
 <form class="max-w-lg mx-auto mt-32" action="" method="POST">
   <div class="mb-5">
     <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
@@ -64,6 +65,7 @@ $customers = customer_show('SELECT * FROM customers');
 
 
 <!-- Table Customers -->
+
 <div class="relative w-max-lg overflow-x-auto mt-20">
   <table class="w-full text-sm text-left rtl:text-right text-black">
     <thead class="text-xs text-gray-700 uppercase bg-gray-200">

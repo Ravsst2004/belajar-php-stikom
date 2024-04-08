@@ -14,7 +14,7 @@ $role = rand(1, 0);
 <?php require_once "./src/layouts/header.php" ?>
 
 <div class="flex flex-col mt-56 text-center gap-y-8">
-  <h1 class="text-7xl font-bold">What kind of web is this?</h1>
+  <h1 class="text-7xl font-bold ">What kind of web is this?</h1>
   <p class="text-3xl ">This web is about what i learn in 1 semester of <span class="font-bold text-blue-700">Back end <br> web development</span> lecture. Learn from basic, make some <br> progress, and more!!</p>
   <p class="text-3xl underline">Maybe you need to know who i am.</p>
   <p class="text-3xl">"Sup!! My name is <span class="font-bold text-blue-700">Putu Ravindra Viswanatha</span>. I am 20 <br> years old. My student ID is 220040046, and my class is <br> BB224. I belong to the class of 2022. I am male."</p>

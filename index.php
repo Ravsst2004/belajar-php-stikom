@@ -1,7 +1,7 @@
 <?php require_once "./src/layouts/header.php" ?>
 
 
-<div class="flex items-center justify-between px-28 pt-56">
+<div class="flex items-center justify-between px-28 pt-60">
   <div class=" flex flex-col gap-y-2">
     <h1 class="text-6xl font-bold ">Back-end Web <br> Development Lecture</h1>
     <p class="text-xl text-justify w-[35rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, recusandae nisi! Dignissimos quas eum omnis labore et. Modi harum odio totam quia perferendis?</p>
@@ -16,7 +16,7 @@
 
 
 <?php $resultOf1stSemeter = [] ?>
-<div class="p-28 mt-32" id="result">
+<div class="px-28 mt-32" id="result">
   <h1 class="font-semibold text-2xl ">Results of 1 Semester</h1>
   <div class="grid grid-cols-3 gap-4">
     <a href="kabataku.php" class="border border-gray-300 p-4 hover:text-white hover:bg-gradient-to-br from-blue-700 ">

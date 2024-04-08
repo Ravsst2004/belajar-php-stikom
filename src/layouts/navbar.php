@@ -8,7 +8,7 @@
 
   <ul class="flex gap-x-5 items-center font-medium">
     <?php foreach ($link_navbar as $key => $link) : ?>
-      <li class="hover:text-gray-600 hover:underline"><a href="<?= $link ?>"><?= $key ?></a></li>
+      <li class="relative inline cursor-pointer font-medium before:bg-blue-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"><a href="<?= $link ?>"><?= $key ?></a></li>
     <?php endforeach ?>
 
     <li class="relative">
