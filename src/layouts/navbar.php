@@ -1,5 +1,20 @@
-<?php $link_navbar = ["Home" => "index.php", "About" => "about.php", "Contact" => "contact.php"]; ?>
-<?php $link_navbar_dropdown = ["customer" => "customer.php", "kabataku" => "kabataku.php"] ?>
+<?php
+$url = $_SERVER['REQUEST_URI'];
+$url = str_replace('/php-belajar/', '', $url);
+
+$link_navbar = [
+  "Home" => "index.php",
+  "About" => "about.php",
+  "Contact" => "contact.php"
+];
+
+$link_navbar_dropdown = [
+  "Customer" => "customer.php",
+  "Kabataku" => "kabataku.php"
+];
+
+?>
+
 
 <nav class="flex flex-row items-center justify-between py-4 px-28 border-b-[1px] bg-white shadow-xl top-0 fixed w-full" id="navbar">
   <ul class="font-bold">
@@ -8,7 +23,11 @@
 
   <ul class="flex gap-x-5 items-center font-medium">
     <?php foreach ($link_navbar as $key => $link) : ?>
-      <li class="relative inline cursor-pointer font-medium before:bg-blue-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"><a href="<?= $link ?>"><?= $key ?></a></li>
+
+      <?php
+      $isActive = $url == $link;
+      ?>
+      <li class="<?= $isActive ? 'text-blue-600' : ''; ?> relative inline cursor-pointer font-medium before:bg-blue-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"><a href="<?= $link ?>"><?= $key ?></a></li>
     <?php endforeach ?>
 
     <li class="relative">
@@ -30,9 +49,6 @@
     </li>
   </ul>
 </nav>
-
-
-
 
 
 
