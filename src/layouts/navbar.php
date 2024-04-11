@@ -19,7 +19,7 @@ $link_navbar_dropdown = [
 
 
 
-<nav class="flex flex-row items-center justify-between py-4 px-10 sm:px-16 md:px-20 lg:px-28 border-b-[1px] bg-white shadow-xl top-0 fixed w-full" id="navbar">
+<nav class="flex flex-row items-center justify-between py-4 px-10 sm:px-16 md:px-20 lg:px-28 border-b-[1px] bg-white shadow-xl top-0 fixed w-screen" id="navbar">
   <ul class="font-bold">
     <li><a href="index.php">Back-end Web</a></li>
   </ul>
