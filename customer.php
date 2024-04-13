@@ -43,7 +43,7 @@ $customers = customer_show('SELECT * FROM customers');
 
 <!-- Form -->
 
-<form class="max-w-lg mx-auto mt-32" action="" method="POST">
+<form class="max-w-lg mx-auto mt-32 w-screen " action="" method="POST">
   <div class="mb-5">
     <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
     <input type="name" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Jro Gobler" required />
@@ -66,7 +66,7 @@ $customers = customer_show('SELECT * FROM customers');
 
 <!-- Table Customers -->
 
-<div class="relative w-max-lg overflow-x-auto mt-20">
+<div class="relative w-max-lg overflow-x-auto mt-20 w-screen">
   <table class="w-full text-sm text-left rtl:text-right text-black">
     <thead class="text-xs text-gray-700 uppercase bg-gray-200">
       <tr>
@@ -109,11 +109,11 @@ $customers = customer_show('SELECT * FROM customers');
           <td class="px-6 py-4">
             <?= $customer['address'] ?>
           </td>
-          <td class="px-6 py-4">
+          <td class="flex flex-col md:flex-row text-center gap-y-2 px-6 py-4 w-full">
             <!-- Tombol Edit -->
-            <a href="customer_edit.php?customer_id=<?= $customer['customer_id'] ?>" class="bg-blue-500 hover:bg-blue-700 text-white text-gray font-bold py-2 px-4 rounded-full mr-2">Edit</a>
+            <a href="customer_edit.php?customer_id=<?= $customer['customer_id'] ?>" class="w-24 bg-blue-500 hover:bg-blue-700 text-white text-gray font-bold py-2 px-4 rounded-full mr-2">Edit</a>
             <!-- Tombol Delete -->
-            <a href="customer_delete.php?customer_id=<?= $customer['customer_id'] ?>" onclick="return confirm('Are you sure?')" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Delete</a>
+            <a href="customer_delete.php?customer_id=<?= $customer['customer_id'] ?>" onclick="return confirm('Are you sure?')" class="w-24 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Delete</a>
           </td>
         </tr>
       <?php endforeach ?>
