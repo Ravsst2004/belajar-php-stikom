@@ -1,13 +1,20 @@
 <?php
 function getTitle()
 {
+  // Array of titles mapped to their respective URLs
   $titles = [
-    '/php-belajar/index.php' => 'Home',
-    '/php-belajar/about.php' => 'About',
-    '/php-belajar/contact.php' => 'Contact',
-    '/php-belajar/customer.php' => 'Customer'
+    '/belajar-php-stikom/index.php' => 'Home',
+    '/belajar-php-stikom/about.php' => 'About',
+    '/belajar-php-stikom/contact.php' => 'Contact',
+    '/belajar-php-stikom/customer.php' => 'Customer',
+    '/belajar-php-stikom/kabataku.php' => 'Kabataku',
+    '/belajar-php-stikom/customer_edit.php' => 'Edit',
   ];
+
+  // Get the current request URI
   $current_url = $_SERVER['REQUEST_URI'];
+
+  // Return the title if the current URL exists in the array, otherwise return 'Page Not Found'
   return isset($titles[$current_url]) ? $titles[$current_url] : 'Page Not Found';
 }
 ?>
