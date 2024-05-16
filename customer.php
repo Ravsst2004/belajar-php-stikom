@@ -68,56 +68,62 @@ $customers = customer_show('SELECT * FROM customers');
 
 <div class="relative w-max-lg overflow-x-auto mt-20 w-screen">
   <table class="w-full text-sm text-left rtl:text-right text-black">
-    <thead class="text-xs text-gray-700 uppercase bg-gray-200">
-      <tr>
-        <th scope="col" class="px-6 py-3">
-          No
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Name
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Phone
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Email
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Address
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Actions
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php $nomor = 1 ?>
-      <?php foreach ($customers as $customer) : ?>
-        <tr class="bg-gray-100 border-b ">
-          <td scope="row" class="px-6 py-4">
-            <?= $nomor++ ?>
-          </td>
-          <td scope="row" class="px-6 py-4">
-            <?= $customer['name'] ?>
-          </td>
-          <td class="px-6 py-4">
-            <?= $customer['phone'] ?>
-          </td>
-          <td class="px-6 py-4">
-            <?= $customer['email'] ?>
-          </td>
-          <td class="px-6 py-4">
-            <?= $customer['address'] ?>
-          </td>
-          <td class="flex flex-col md:flex-row text-center gap-y-2 px-6 py-4 w-full">
-            <!-- Tombol Edit -->
-            <a href="customer_edit.php?customer_id=<?= $customer['customer_id'] ?>" class="w-24 bg-blue-500 hover:bg-blue-700 text-white text-gray font-bold py-2 px-4 rounded-full mr-2">Edit</a>
-            <!-- Tombol Delete -->
-            <a href="customer_delete.php?customer_id=<?= $customer['customer_id'] ?>" onclick="return confirm('Are you sure?')" class="w-24 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Delete</a>
-          </td>
+    <?php if (!empty($customers)) : ?>
+      <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            No
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Name
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Phone
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Email
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Address
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Actions
+          </th>
         </tr>
-      <?php endforeach ?>
-    </tbody>
+      </thead>
+    <?php endif ?>
+    <php>
+      <?php $nomor = 1 ?>
+      <?php if (!empty($customers)) : ?>
+        <?php foreach ($customers as $customer) : ?>
+          <tr class="bg-gray-100 border-b ">
+            <td scope="row" class="px-6 py-4">
+              <?= $nomor++ ?>
+            </td>
+            <td scope="row" class="px-6 py-4">
+              <?= $customer['name'] ?>
+            </td>
+            <td class="px-6 py-4">
+              <?= $customer['phone'] ?>
+            </td>
+            <td class="px-6 py-4">
+              <?= $customer['email'] ?>
+            </td>
+            <td class="px-6 py-4">
+              <?= $customer['address'] ?>
+            </td>
+            <td class="flex flex-col md:flex-row text-center gap-y-2 px-6 py-4 w-full">
+              <!-- Tombol Edit -->
+              <a href="customer_edit.php?customer_id=<?= $customer['customer_id'] ?>" class="w-24 bg-blue-500 hover:bg-blue-700 text-white text-gray font-bold py-2 px-4 rounded-full mr-2">Edit</a>
+              <!-- Tombol Delete -->
+              <a href="customer_delete.php?customer_id=<?= $customer['customer_id'] ?>" onclick="return confirm('Are you sure?')" class="w-24 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Delete</a>
+            </td>
+          </tr>
+        <?php endforeach ?>
+      <?php else : ?>
+        <h1 class="text-center font-bold text-4xl text-red-600">Data tidak ada</h1>
+      <?php endif ?>
+    </php>
   </table>
 </div>
 
