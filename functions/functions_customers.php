@@ -2,14 +2,14 @@
 require_once(__DIR__ . '/db_connection.php');
 
 // ADD DATA
-function customer_add($query)
+function customer_add($data)
 {
   global $conn;
 
-  $name = htmlspecialchars($query['name']);
-  $phone = htmlspecialchars($query['phone']);
-  $email = htmlspecialchars($query['email']);
-  $address = htmlspecialchars($query['address']);
+  $name = htmlspecialchars($data['name']);
+  $phone = htmlspecialchars($data['phone']);
+  $email = htmlspecialchars($data['email']);
+  $address = htmlspecialchars($data['address']);
 
   $add = "INSERT INTO customers(name,phone,email,address) VALUES ('$name', '$phone', '$email', '$address')";
   $result = mysqli_query($conn, $add);
