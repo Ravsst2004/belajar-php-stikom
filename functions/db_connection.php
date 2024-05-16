@@ -2,7 +2,7 @@
 $server_name = "localhost";
 $user_name = "root";
 $password = "";
-$database = "db-project";
+$database = "db_matkul_backendweb";
 
 $conn = mysqli_connect($server_name, $user_name, $password, $database);
 
