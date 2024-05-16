@@ -25,7 +25,7 @@
         <img src="public/img/Kabataku.png" alt="kabataku" class="border-2 border-black">
       </a>
       <a href="customer.php" class="border  lg:w-full border-gray-300 lg:p-4 hover:text-white hover:bg-gradient-to-br from-blue-700 ">
-        <h1 class="text-sm xl:text-xl">Kabataku</h1>
+        <h1 class="text-sm xl:text-xl">Customers</h1>
         <img src="public/img/Crud.png" alt="crud-php" class="border-2 border-black">
       </a>
       <?php for ($i = 1; $i <= 8; $i++) : ?>
