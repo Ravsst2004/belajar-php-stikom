@@ -26,12 +26,21 @@ function customer_show($query)
 {
   global $conn;
   $result = mysqli_query($conn, $query);
-  $rows = [];
-  while ($row = mysqli_fetch_assoc($result)) {
-    $rows[] = $row;
+  while ($data = mysqli_fetch_assoc($result)) {
+    $rows[] = $data;
   }
   return $rows;
 }
+// function customer_show($query)
+// {
+//   global $conn;
+//   $result = mysqli_query($conn, $query);
+//   $rows = [];
+//   while ($row = mysqli_fetch_assoc($result)) {
+//     $rows[] = $row;
+//   }
+//   return $rows;
+// }
 
 // EDIT DATA
 function customers_edit($query)
@@ -44,7 +53,7 @@ function customers_edit($query)
   $email = htmlspecialchars($query['email']);
   $address = htmlspecialchars($query['address']);
 
-  $edit = "UPDATE customers SET name = '$name', phone = '$phone', email = '$email', address = '$address' WHERE customer_id = $id";
+  $edit = "UPDATE customers SET id = $id, name = '$name', phone = '$phone', email = '$email', address = '$address' WHERE customer_id = $id";
   $result = mysqli_query($conn, $edit);
   return $result;
 }
