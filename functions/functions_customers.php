@@ -2,14 +2,14 @@
 require_once(__DIR__ . '/db_connection.php');
 
 // ADD DATA
-function customer_add($query)
+function customer_add($data)
 {
   global $conn;
 
-  $name = htmlspecialchars($query['name']);
-  $phone = htmlspecialchars($query['phone']);
-  $email = htmlspecialchars($query['email']);
-  $address = htmlspecialchars($query['address']);
+  $name = htmlspecialchars($data['name']);
+  $phone = htmlspecialchars($data['phone']);
+  $email = htmlspecialchars($data['email']);
+  $address = htmlspecialchars($data['address']);
 
   $add = "INSERT INTO customers(name,phone,email,address) VALUES ('$name', '$phone', '$email', '$address')";
   $result = mysqli_query($conn, $add);
@@ -26,26 +26,36 @@ function customer_show($query)
 {
   global $conn;
   $result = mysqli_query($conn, $query);
-  $rows = [];
-  while ($row = mysqli_fetch_assoc($result)) {
-    $rows[] = $row;
+  while ($data = mysqli_fetch_assoc($result)) {
+    $rows[] = $data;
   }
   return $rows;
 }
+// function customer_show($query)
+// {
+//   global $conn;
+//   $result = mysqli_query($conn, $query);
+//   $rows = [];
+//   while ($row = mysqli_fetch_assoc($result)) {
+//     $rows[] = $row;
+//   }
+//   return $rows;
+// }
 
 // EDIT DATA
-function customers_edit($query)
+function customers_edit($data)
 {
   global $conn;
 
-  $id = $query['customer_id'];
-  $name = htmlspecialchars($query['name']);
-  $phone = htmlspecialchars($query['phone']);
-  $email = htmlspecialchars($query['email']);
-  $address = htmlspecialchars($query['address']);
+  $id = $data['customer_id'];
+  $name = htmlspecialchars($data['name']);
+  $phone = htmlspecialchars($data['phone']);
+  $email = htmlspecialchars($data['email']);
+  $address = htmlspecialchars($data['address']);
 
   $edit = "UPDATE customers SET name = '$name', phone = '$phone', email = '$email', address = '$address' WHERE customer_id = $id";
   $result = mysqli_query($conn, $edit);
+
   return $result;
 }
 
