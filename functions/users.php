@@ -5,6 +5,7 @@ function login($data)
 {
   global $conn;
 
+  $user_id = $data['user_id'];
   $email = htmlspecialchars($data['email']);
   $password = htmlspecialchars($data['password']);
 
@@ -17,7 +18,11 @@ function login($data)
     // Password check
     $row = mysqli_fetch_assoc($result);
     if (password_verify($password, $row['password'])) {
-      // session_start();
+
+      session_start();
+      $_SESSION['id'] = mysqli_fetch_assoc($result)['id'];
+      $_SESSION['email'] = $email;
+      
       header("Location: home.php");
       die();
     }
