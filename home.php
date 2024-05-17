@@ -1,4 +1,13 @@
-<?php require_once "./src/layouts/header.php" ?>
+<?php
+
+session_start();
+if (!isset($_SESSION["id"]) && !isset($_SESSION["email"])) {
+  header("Location: /belajar-php-stikom/");
+  die();
+}
+
+require_once "./src/layouts/header.php";
+?>
 
 <section class="w-screen">
 
