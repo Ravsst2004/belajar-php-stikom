@@ -3,7 +3,8 @@ function getTitle()
 {
   // Array of titles mapped to their respective URLs
   $titles = [
-    '/belajar-php-stikom/index.php' => 'Home',
+    '/belajar-php-stikom' . '/' => 'Login',
+    '/belajar-php-stikom/home.php' => 'Home',
     '/belajar-php-stikom/about.php' => 'About',
     '/belajar-php-stikom/contact.php' => 'Contact',
     '/belajar-php-stikom/customer.php' => 'Customer',
@@ -36,4 +37,18 @@ function getTitle()
 </head>
 
 <body class="font-poppins">
-  <?php include "./src/layouts/navbar.php"; ?>
+  <?php
+  // Dapatkan URL saat ini
+  $current_url = $_SERVER['REQUEST_URI'];
+
+  // Daftar URL yang tidak memerlukan header
+  $not_url = [
+    '/belajar-php-stikom' . "/",
+    '/belajar-php-stikom/registration.php'
+  ];
+
+  // Periksa apakah URL saat ini ada di dalam daftar URL yang dikecualikan
+  if (!in_array($current_url, $not_url)) {
+    include './src/layouts/navbar.php';
+  }
+  ?>
