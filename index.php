@@ -1,41 +1,51 @@
-<?php require_once "./src/layouts/header.php" ?>
+<?php
 
-<section class="w-screen">
+include "functions/users.php";
 
-  <div class=" md:flex items-center justify-between px-10 sm:px-16 md:px-20 lg:px-28 pt-36 lg:pt-60">
-    <div class=" flex flex-col xl:gap-x-4 gap-y-2">
-      <h1 class="text-2xl md:text-3xl lg:text-6xl font-bold ">Back-end Web <br> Development Lecture</h1>
-      <p class="text-md lg:text-xl text-justify w-full lg:w-[35rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, recusandae nisi! Dignissimos quas eum omnis labore et. Modi harum odio totam quia perferendis?</p>
-      <a href="#result" class="text-md bg-blue-600 md:text-lg p-2 w-fit rounded-md text-white hover:bg-blue-800 hover:ring-4 hover:outline-none hover:ring-blue-300">Know what i made</a>
-    </div>
-    <div class="hidden xl:flex">
-      <img src="./public/svg/landing_page.svg" alt="web-development" width="650">
-    </div>
+if (isset($_POST["loginBtn"])) {
+  $error = login($_POST);
+}
+
+require_once "./src/layouts/header.php"
+?>
+
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+    <?php if (isset($error)) : ?>
+      <p class="mt-2 text-center text-sm leading-6 text-red-600 font-semibold">Credential is wrong</p>
+    <?php endif ?>
   </div>
 
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="space-y-6" action="#" method="POST">
+      <div>
+        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+        <div class="mt-2">
+          <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
 
+      <div>
+        <div class="flex items-center justify-between">
+          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+          <div class="text-sm">
+            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+          </div>
+        </div>
+        <div class="mt-2">
+          <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
 
-  <!-- Grid layouts -->
-  <?php $resultOf1stSemeter = [] ?>
-  <div class="px-10 sm:px-16 md:px-20 lg:px-28 mt-20 lg:mt-32" id="result">
-    <h1 class="text-lg font-semibold lg:text-2xl">Results of 1 Semester</h1>
-    <div class="grid grid-cols-3 gap-4 text-center lg:text-justify">
-      <a href="kabataku.php" class="border  lg:w-full border-gray-300 lg:p-4 hover:text-white hover:bg-gradient-to-br from-blue-700 ">
-        <h1 class="text-sm xl:text-xl">Kabataku</h1>
-        <img src="public/img/Kabataku.png" alt="kabataku" class="border-2 border-black">
-      </a>
-      <a href="customer.php" class="border  lg:w-full border-gray-300 lg:p-4 hover:text-white hover:bg-gradient-to-br from-blue-700 ">
-        <h1 class="text-sm xl:text-xl">Customers</h1>
-        <img src="public/img/Crud.png" alt="crud-php" class="border-2 border-black">
-      </a>
-      <?php for ($i = 1; $i <= 8; $i++) : ?>
-        <div class="border border-gray-300 lg:p-4 text-sm xl:text-xl"><?= "Coming Soon!" ?></div>
-      <?php endfor ?>
-    </div>
+      <div>
+        <button type="submit" name="loginBtn" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+      </div>
+    </form>
+
+    <p class="mt-10 text-center text-sm text-gray-500">
+      Not a member?
+      <a href="registration.php" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">registration now!</a>
+    </p>
   </div>
-</section>
-
-
-
-
-<?php require_once "./src/layouts/footer.php" ?>
+</div>
