@@ -22,7 +22,7 @@ function login($data)
       session_start();
       $_SESSION['id'] = mysqli_fetch_assoc($result)['id'];
       $_SESSION['email'] = $email;
-      
+
       header("Location: home.php");
       die();
     }
@@ -73,4 +73,12 @@ function registration($data)
   $result = mysqli_query($conn, $query);
 
   return $result;
+}
+
+function logout()
+{
+  session_start();
+  session_unset();
+  session_destroy();
+  header("Location: /belajar-php-stikom/");
 }
