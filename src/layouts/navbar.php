@@ -1,4 +1,6 @@
 <?php
+// include_once "../../functions/users.php";
+
 $url = $_SERVER['REQUEST_URI'];
 $url = str_replace('/php-belajar/', '', $url);
 
@@ -13,6 +15,9 @@ $link_navbar_dropdown = [
   "Kabataku" => "kabataku.php"
 ];
 
+// After login and set session
+$isLogin = true;
+if (isset($_POST['logout'])) logout();
 ?>
 
 
@@ -33,6 +38,13 @@ $link_navbar_dropdown = [
         <?= $key ?>
       </a>
     <?php endforeach ?>
+
+    <?php if ($isLogin) : ?>
+      <form method="POST" action="">
+        <button type="submit" name="logout" class="text-red-400 hover:text-red-700">Logout</button>
+      </form>
+    <?php endif; ?>
+
 
     <!-- Data dropdown -->
     <li class="relative">

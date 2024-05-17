@@ -1,4 +1,6 @@
 <?php
+include_once '../belajar-php-stikom/functions/users.php';
+
 function getTitle()
 {
   // Array of titles mapped to their respective URLs
