@@ -5,7 +5,6 @@ function login($data)
 {
   global $conn;
 
-  $user_id = $data['user_id'];
   $email = htmlspecialchars($data['email']);
   $password = htmlspecialchars($data['password']);
 
