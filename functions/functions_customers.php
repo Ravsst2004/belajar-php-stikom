@@ -53,7 +53,7 @@ function customers_edit($data)
   $email = htmlspecialchars($data['email']);
   $address = htmlspecialchars($data['address']);
 
-  $edit = "UPDATE customers SET id = $id, name = '$name', phone = '$phone', email = '$email', address = '$address' WHERE customer_id = $id";
+  $edit = "UPDATE customers SET name = '$name', phone = '$phone', email = '$email', address = '$address' WHERE customer_id = $id";
   $result = mysqli_query($conn, $edit);
 
   return $result;
