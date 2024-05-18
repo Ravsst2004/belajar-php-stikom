@@ -5,7 +5,7 @@ $url = $_SERVER['REQUEST_URI'];
 $url = str_replace('/php-belajar/', '', $url);
 
 $link_navbar = [
-  "Home" => "index.php",
+  "Home" => "home.php",
   "About" => "about.php",
   "Contact" => "contact.php"
 ];
