@@ -6,6 +6,12 @@ if (isset($_POST["loginBtn"])) {
   $error = login($_POST);
 }
 
+// session_start();
+// if (isset($_SESSION["id"]) && isset($_SESSION["email"])) {
+//   header("Location: home.php");
+//   die();
+// }
+
 require_once "./src/layouts/header.php"
 ?>
 

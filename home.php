@@ -1,10 +1,12 @@
 <?php
+// require_once 'functions/users.php';
 
 session_start();
 if (!isset($_SESSION["id"]) && !isset($_SESSION["email"])) {
   header("Location: /belajar-php-stikom/");
   die();
 }
+// isLogin();
 
 require_once "./src/layouts/header.php";
 ?>

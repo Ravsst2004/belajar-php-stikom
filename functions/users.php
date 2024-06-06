@@ -81,3 +81,13 @@ function logout()
   session_destroy();
   header("Location: /belajar-php-stikom/");
 }
+
+
+// function isLogin()
+// {
+//   session_start();
+//   if (!isset($_SESSION["id"]) && !isset($_SESSION["email"])) {
+//     header("Location: /belajar-php-stikom/");
+//     die();
+//   }
+// }
