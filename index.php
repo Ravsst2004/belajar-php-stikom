@@ -1,16 +1,16 @@
 <?php
 
-include "functions/users.php";
+include "functions/User.php";
 
 if (isset($_POST["loginBtn"])) {
-  $error = login($_POST);
+  $error = $User->login($_POST);
 }
 
-// session_start();
-// if (isset($_SESSION["id"]) && isset($_SESSION["email"])) {
-//   header("Location: home.php");
-//   die();
-// }
+session_start();
+if (isset($_SESSION["id"]) && isset($_SESSION["email"])) {
+  header("Location: home.php");
+  die();
+}
 
 require_once "./src/layouts/header.php"
 ?>

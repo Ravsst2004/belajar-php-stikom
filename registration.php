@@ -1,9 +1,9 @@
 <?php
-include_once "functions/users.php";
+include_once "functions/User.php";
 
 
 if (isset($_POST["registrasi"])) {
-  if (registration($_POST) > 0) {
+  if ($User->registration($_POST) > 0) {
     echo "
             <script>
                 alert('Registrasi sukses');

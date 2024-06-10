@@ -1,5 +1,5 @@
 <?php
-include_once '../belajar-php-stikom/functions/users.php';
+// include_once '../belajar-php-stikom/functions/users.php';
 
 function getTitle()
 {

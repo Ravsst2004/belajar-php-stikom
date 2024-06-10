@@ -1,13 +1,13 @@
 <?php
-require_once(__DIR__ . '/functions/functions_customers.php');
+require_once "functions/Customers.php";
 
 // Cek jika tombol submit ditekan untuk mengeksekusi query tambah data
 if (isset($_POST['submit'])) {
-  $succes = customer_add($_POST);
+  $succes = $Customer->storeCustomers($_POST);
 }
 
 // Ambil data
-$customers = customer_show('SELECT * FROM customers');
+$customers = $Customer->getCustomers('SELECT * FROM customers');
 
 // Ambil boolean status
 // $deleted = isset($_GET['deleted']) ? $_GET['deleted'] : false;

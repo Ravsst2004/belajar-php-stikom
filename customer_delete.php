@@ -1,11 +1,11 @@
 <?php
-include_once __DIR__ . '/functions/functions_customers.php';
+require_once "functions/Customers.php";
 
 // Ambil id dari url
 $id = $_GET['customer_id'];
 
 // Cek jika query berhasil atau tidak, nilai yang di return boolean
-if (customers_delete($id)) {
+if ($Customer->deleteCustomers($id)) {
     echo "
             <script>
                 alert('Data Berhasil di hapus');

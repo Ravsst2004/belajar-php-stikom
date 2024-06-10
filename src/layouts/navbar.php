@@ -16,8 +16,8 @@ $link_navbar_dropdown = [
 ];
 
 // After login and set session
-$isLogin = true;
-if (isset($_POST['logout'])) logout();
+// $isLogin = true;
+// if (isset($_POST['logout'])) logout();
 ?>
 
 
@@ -39,11 +39,11 @@ if (isset($_POST['logout'])) logout();
       </a>
     <?php endforeach ?>
 
-    <?php if ($isLogin) : ?>
+    <!-- <?php if ($isLogin) : ?>
       <form method="POST" action="">
         <button type="submit" name="logout" class="text-red-400 hover:text-red-700">Logout</button>
       </form>
-    <?php endif; ?>
+    <?php endif; ?> -->
 
 
     <!-- Data dropdown -->
